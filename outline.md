@@ -1,0 +1,101 @@
+- What is linear algebra?
+  - A bad definition then a good one
+- Linear algebra is the study of vectors
+  - What is a vector?
+    - A vector is not a list of numbers (though a list of numbers can be a vector)
+    - Children know what vectors are intuitively
+      - Direction and distance
+      - No coordinate grid
+      - Coordinate grids are extra structure and are not mandatory
+  - Operations on vectors
+    - Addition
+    - Scaling
+  - There are other operations, but they are not fundemental like these.
+  - Furthermore, anything with an adding and scaling operation, subject to certain properties, can be thought of as a vector
+  - Examples: Arrows, R^n, polynomials
+  - We call these vector spaces
+  - Another bad definition of linear algebra: the study of vector spaces
+- What is a basis?
+  - Linear combinations
+    - A linear combination of a set of vectors is a sum of the vectors, each with a scale factor applied.
+    - Example
+  - Linear independence
+    - A linearly independent set of vectors is one that has no redundant vectors
+    - In other words, no vector in the set can be written as a sum of the others
+    - Examples:
+  - Generating set
+    - Every vector in the plane can be written as a linear combination of these two vectors:
+    - Thus these vectors are called a generating (or spanning) set for the plane.
+    - In general, given a set of vectors you can form the _span_ of them by taking all possible linear combinations of the vectors.
+    - In this case, the original set is called the generating set of the _span_
+  - Basis
+    - A basis for a vector space is a linearly independent generating set for that space
+    - In other words, every vector in the space can be written uniquely as a linear combination of the vectors in the basis
+  - Dimension
+    - Every basis has the same number of vectors
+    - This number is called the dimension
+  - Examples of bases:
+  - Note that a choice of basis gives a choice of coordinate grid
+  - Note that choice of basis is entirely arbitrary. Vectors exist independently of bases
+  - R^3 is a special vector space with a distinguished choice of basis: [1, 0, 0], [0, 1, 0], [0, 0, 1].
+- What is a linear transform?
+  - Recall the definition of a function in math:
+    - a function f takes a vector v and produces an output vector f(v). The vector it produces is always the same given the same input vector
+    - Functions have a domain and a codomain, representing the vector spaces that the input and output are in.
+    - If the input space is V and the output space is W we write this as f: V -> W. We read this as "f is a function from V to W".
+  - A linear transform is a function satisfying an additional property: linearity
+    - Preservation of addition: f(u+v)=f(u)+f(v)
+    - Preservation of scaling: f(cv)=cf(v)
+  - Linearity is sort of like the distributive law and commutative law combined.
+  - Examples:
+  - Freshman's dream
+    - A common error by young or inexperience mathematical discipuli is to assume a nonlinear operation is linear. As an example:
+    - assuming (x+y)^n=x^n+y^n
+  - Why is linearity important?
+    - Lots of reasons: first of all a lot of important functions are linear
+    - Second of all, they are simpler to deal with, as we shall soon see
+    - Third, many functions can be approximated by linear functions. Ask if you want further details on this
+  - Composition of linear functions
+    - Given any two functions, f and g, you can form the composition of them: f(g(v)).
+    - This means, first apply the transform g, then apply the transform f to the output of it
+    - Examples:
+    - Note that in order for functions to be composable their domains and codomains must match up like f: V -> W and g: U -> V
+  - Isomorphism
+    - If every vector in the codomain comes from a unique vector in the domain, we call this an isomorphism
+    - Examples:
+  - A choice of a basis for a vector space is the same as choosing an isomorphism to R^n (where n is the dimension).
+    - We can think of this function as assigning coordinates to every vector in our domain
+  * A better definition of linear algebra: The study of vector spaces and linear transforms between them
+- What is a matrix?
+  - Matrices are to basis as coordinates are to vector spaces
+  - We note that if the domain of a linear transform is given a choice of basis, then the output of the linear transform is entirely determined by the value of the function on the basis
+  - Examples:
+  - From this we can see that in order to represent a basis we can just list out the output vectors of our basis [v_1 v_2 v_3 ... v_n]
+    - This means that the first vector in our basis goes to v_1, the second vector goes to v_2, etc
+  - If we give the codomain a basis, then we can write the output vectors in coordinates, and the result of this is the matrix of the transform
+    - The matrix depends on the choice of basis of both the domain and codomain
+  - If the domain and codomain are the same vector space, then we can choose a single common basis for both
+    - Then for each linear transform there is a unique matrix with respect to that basis
+  - Examples:
+  - Composition of linear transforms corresponds to matrix multiplication
+    - I won't go through all the details, but
+    - If you have two linear transforms, both of which have the same domain and codomain, you may choose a basis and get a matrix for each of them
+    - You may compose them, getting another linear transform. Hence, the composition has a matrix too
+    - If you work through the details of this, it turns out that the matrix of the composition corresponds to the matrix multiplication of the matrices of the two transforms
+    - Example:
+- To be continued:
+  - Further topics
+    - Change of basis formula
+    - Gauss-Jordan
+    - Inner products, orthonormality
+    - Gram-Schimdt
+      - Interpolation formula for quaternions
+    - The first isomorphism theorem for inner product spaces
+    - Eigenvalues
+    - Determinants
+    - Duality
+    - Tensors
+  - Further material
+    - Linear algebra done right by Axler
+    - Essense of linear algebra by 3blue1brown
+    - http://number-none.com/product/Understanding%20Slerp,%20Then%20Not%20Using%20It/
